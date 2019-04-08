@@ -56,14 +56,19 @@ pipeline {
     post {
         always {
             echo 'This will always run'
+            deleteDir() /* clean up our workspace */
             //archiveArtifacts artifacts: '**/*.jar', fingerprint: true
-            //junit 'build/reports/**/*.xml'          
+            unit 'build/reports/**/*.xml'          
         }
         success {
             echo 'This will run only if successful'
         }
         failure {
             echo 'This will run only if failed'
+            mail to: 'jiayin.zhuo@gmail.com',
+            subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+            body: "Something is wrong with ${env.BUILD_URL}"
+            
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
