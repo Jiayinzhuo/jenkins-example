@@ -59,6 +59,10 @@ pipeline {
             deleteDir() /* clean up our workspace */
             //archiveArtifacts artifacts: '**/*.jar', fingerprint: true
             //junit 'build/reports/**/*.xml'          
+ 
+            mail to: 'jiayin.zhuo@gmail.com',
+            subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+            body: "Something is wrong with ${env.BUILD_URL}"
         }
         success {
             echo 'This will run only if successful'
