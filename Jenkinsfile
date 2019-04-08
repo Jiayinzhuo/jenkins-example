@@ -61,8 +61,8 @@ pipeline {
             //junit 'build/reports/**/*.xml'          
  
             mail to: 'jiayin.zhuo@gmail.com',
-            subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-            body: "Something is wrong with ${env.BUILD_URL}"
+            subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
+            body: "Everything is fine with ${env.BUILD_URL}"
         }
         success {
             echo 'This will run only if successful'
