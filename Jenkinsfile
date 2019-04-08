@@ -3,6 +3,9 @@ pipeline {
     tools { 
         maven 'Maven 3.6.0' 
     }
+    environment {
+        DISABLE_AUTH = 'true'
+    }
     stages {
         stage ('Initialize') {
             steps {
@@ -21,8 +24,10 @@ pipeline {
         stage ('Build Stage') {
             steps {
                 echo 'mvn --version'
-                echo 'mvn clean compile'
+                echo 'printenv'
+                echo 'mvn clean compile'               
                 sh 'mvn --version'
+                sh 'printenv'
                 sh 'mvn clean compile'
             }
         }
