@@ -65,7 +65,7 @@ pipeline {
             deleteDir() /* clean up our workspace */
             //archiveArtifacts artifacts: '**/*.jar', fingerprint: true
             //junit 'build/reports/**/*.xml'   
-	    junit 'target/surefire-reports/*.xml'       
+	    //junit 'target/surefire-reports/*.xml'       
  
             mail to: 'jiayin.zhuo@gmail.com',
             subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
