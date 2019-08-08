@@ -23,9 +23,6 @@ pipeline {
 
         stage ('Build Stage') {
             steps {
-//                echo 'mvn --version'
-//                echo 'printenv'
-//                echo 'mvn clean compile'               
                 sh 'mvn --version'
                 sh 'printenv'
                 sh 'mvn clean compile'
@@ -35,7 +32,6 @@ pipeline {
 
         stage ('Testing Stage') {
             steps {
-                echo 'mvn test' 
                 sh 'mvn test'
             }
         }
@@ -51,7 +47,6 @@ pipeline {
             steps {
                  timeout(time: 3, unit: 'MINUTES') {
                     retry(2) {
-                        echo 'mvn deploy'
                         sh 'mvn deploy'
                     }
                 }                  
