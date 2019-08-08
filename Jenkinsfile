@@ -23,9 +23,9 @@ pipeline {
 
         stage ('Build Stage') {
             steps {
-//                echo 'mvn --version'
-//                echo 'printenv'
-//                echo 'mvn clean compile'               
+                echo 'mvn --version'
+                echo 'printenv'
+                echo 'mvn clean compile'               
                 sh 'mvn --version'
                 sh 'printenv'
                 sh 'mvn clean compile'
