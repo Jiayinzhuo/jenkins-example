@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
- 				sh 'echo "Hello World"'
+ 				sh 'echo "Jenkins Demo"'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
@@ -60,7 +60,7 @@ pipeline {
             deleteDir() /* clean up our workspace */
             //archiveArtifacts artifacts: '**/*.jar', fingerprint: true
             //junit 'build/reports/**/*.xml'   
-	    //junit 'target/surefire-reports/*.xml'       
+	    	//junit 'target/surefire-reports/*.xml'       
  
             mail to: 'jiayin.zhuo@gmail.com',
             subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
