@@ -61,13 +61,12 @@ pipeline {
             //archiveArtifacts artifacts: '**/*.jar', fingerprint: true
             //junit 'build/reports/**/*.xml'   
 	    	//junit 'target/surefire-reports/*.xml'       
- 
-            mail to: 'jiayin.zhuo@gmail.com',
-            subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
-            body: "Everything is fine with ${env.BUILD_URL}"
         }
         success {
             echo 'This will run only if successful'
+            mail to: 'jiayin.zhuo@gmail.com',
+            subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
+            body: "Everything is fine with ${env.BUILD_URL}"
         }
         failure {
             echo 'This will run only if failed'
