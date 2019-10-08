@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools { 
-        maven 'Maven 3.6.0' 
+        maven 'Maven 3.6.2' 
     }
     environment {
         DISABLE_AUTH = 'true'
