@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
- 				sh 'echo "Jenkins, Github, and JUnit Demo"'
+ 				sh 'echo "Jenkins, Github, JUnit and MavenRepo Demo"'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
