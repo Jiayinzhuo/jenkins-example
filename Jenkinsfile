@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
- 				sh 'echo "Jenkins, Github, JUnit and MavenRepo Demo"'
+ 				sh 'echo "Jenkins, Github, JUnit Maven and MavenRepo Demo"'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
@@ -21,7 +21,7 @@ pipeline {
             }
         }
 
-        stage ('Build Stage') {
+        stage ('Build Stage Uses Maven') {
             steps {
                 sh 'mvn --version'
                 sh 'printenv'
@@ -30,7 +30,7 @@ pipeline {
         }
         
 
-        stage ('Testing Stage') {
+        stage ('Testing Stage Uses JUnit') {
             steps {
                 sh 'mvn test'
             }
@@ -43,7 +43,7 @@ pipeline {
 //            }
 //        }
         
-        stage ('Deployment Stage') {
+        stage ('Deployment Stage Uses Maven Repo') {
             steps {
                  timeout(time: 3, unit: 'MINUTES') {
                     retry(2) {
