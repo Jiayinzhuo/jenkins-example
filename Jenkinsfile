@@ -64,13 +64,13 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
-            mail to: 'jiayin.zhuo@gmail.com',
+            mail to: 'jonathanzhuo.demo@gmail.com',
             subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
             body: "Everything is fine with ${env.BUILD_URL}"
         }
         failure {
             echo 'This will run only if failed'
-            mail to: 'jiayin.zhuo@gmail.com',
+            mail to: 'jonathanzhuo.demo@gmail.com',
             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
             body: "Something is wrong with ${env.BUILD_URL}"
             
