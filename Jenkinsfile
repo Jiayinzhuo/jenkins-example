@@ -57,9 +57,8 @@ pipeline {
     post {
         always {
             echo 'This will always run'
-            //deleteDir() /* clean up our workspace */
+            deleteDir() /* clean up our workspace */
             archiveArtifacts artifacts: '**/*.jar', fingerprint: true
-            //junit 'build/reports/**/*.xml'   
 	    	junit 'target/surefire-reports/*.xml'       
         }
         success {
