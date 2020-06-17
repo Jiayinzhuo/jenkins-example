@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent {
+        label 'ubuntu-1604'
+    }
+
     tools { 
         maven 'M3' 
         jdk 'jdk8'
