@@ -1,7 +1,8 @@
 pipeline {
-    agent {
-        label 'ubuntu-1604'
-    }
+	agent any
+//    agent {
+//        label 'ubuntu-1604'
+//    }
 
     tools { 
         maven 'M3' 
