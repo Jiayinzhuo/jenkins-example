@@ -1,8 +1,5 @@
 pipeline {
-	agent any
-//    agent {
-//        label 'ubuntu-1604'
-//    }
+    agent any
 
     tools { 
         maven 'M3' 
@@ -14,7 +11,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
- 				sh 'echo "Jenkins, Github, JUnit Maven and MavenRepo Demo"'
+		sh 'echo "Jenkins, Github, JUnit Maven and MavenRepo Demo"'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
@@ -41,8 +38,7 @@ pipeline {
             }
         }
 
-
-//		stage('Sanity check') {
+//	stage('Sanity check') {
 //            steps {
 //                input "Does the staging environment look ok?"
 //            }
